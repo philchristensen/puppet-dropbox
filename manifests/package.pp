@@ -45,8 +45,10 @@ class dropbox::package {
         before      => Package['nodejs'],
       }
     }
-    package { 'nodejs':
-      ensure => installed
+    if(! defined(Package['nodejs'])){
+      package { 'nodejs':
+        ensure => installed
+      }
     }
 
     file { 'authorize.js':
