@@ -25,7 +25,7 @@ var die = function(error) {
 console.log('Starting dropbox-link process');
 delete process.env.DISPLAY;
 try {
-	var cmd = process.env.HOME + '/.dropbox-dist/dropbox';
+	var cmd = process.env.HOME + '/.dropbox-dist/dropboxd';
 	console.log('starting ' + cmd);
 	dropboxdProcess = spawn(cmd);
 	dropboxdProcess.stdout.on('data', function(data) {
